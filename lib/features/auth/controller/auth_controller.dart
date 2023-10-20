@@ -34,8 +34,7 @@ class AuthController extends StateNotifier<bool> {
     final user = await _authRepository.signIn(email, password);
     state = false;
 
-    user.fold((l) => showSnackBar(context, l.message),
-        (user) => _ref.read(userProvider.notifier).state = user);
+    user.fold((l) => showSnackBar(context, l.message), (_) {});
   }
 
   void logIn(BuildContext context, String email, String password) async {
