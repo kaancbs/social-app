@@ -18,7 +18,7 @@ class UserProfileRepository {
 
   CollectionReference get _users =>
       _firestore.collection(FirebaseConstants.usersCollection);
-  
+
   FutureVoid editProfile(UserModel user) async {
     try {
       return right(_users.doc(user.uid).update(user.toMap()));
@@ -27,5 +27,10 @@ class UserProfileRepository {
     } catch (e) {
       return left(Failure(e.toString()));
     }
+  }
+
+  Stream<UserModel> getUserByUid(String uid) {
+    return _users.doc(uid).snapshots().map(
+        (event) => UserModel.fromMap(event.data() as Map<String, dynamic>));
   }
 }

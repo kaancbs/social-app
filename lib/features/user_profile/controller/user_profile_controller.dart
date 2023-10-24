@@ -9,6 +9,9 @@ import 'package:random_social_app/features/user_profile/repository/user_profile_
 import 'package:random_social_app/models/user_model.dart';
 import 'package:routemaster/routemaster.dart';
 
+final getUserByUidProvider = StreamProvider.family((ref, String uid) {
+  return ref.watch(userProfileControllerProvider.notifier).getUserByUid(uid);
+});
 final userProfileControllerProvider =
     StateNotifierProvider<UserProfileController, bool>((ref) {
   final userProfileRepository = ref.watch(userProfileRepositoryProvider);
@@ -60,5 +63,9 @@ class UserProfileController extends StateNotifier<bool> {
       _ref.read(userProvider.notifier).update((state) => user);
       Routemaster.of(context).pop();
     });
+  }
+
+  Stream<UserModel> getUserByUid(String uid) {
+    return _userProfileRepository.getUserByUid(uid);
   }
 }

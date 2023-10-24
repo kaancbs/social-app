@@ -5,6 +5,7 @@ import 'package:random_social_app/features/home/screens/app_settings_screen.dart
 import 'package:random_social_app/features/home/screens/edit_profile.dart';
 import 'package:random_social_app/features/home/screens/home_screen.dart';
 import 'package:random_social_app/features/home/screens/profile_screen.dart';
+import 'package:random_social_app/features/posts/screens/add_post_screen.dart';
 import 'package:routemaster/routemaster.dart';
 
 final loggedOutRoute = RouteMap(routes: {
@@ -20,4 +21,5 @@ final loggedInRoute = RouteMap(routes: {
       )),
   '/profile/edit-profile': (routeData) =>
       const MaterialPage(child: EditProfileScreen()),
+  '/share-post': (_) => const MaterialPage(child: AddPostScreen()),
 });
