@@ -1,6 +1,10 @@
 <h3>In this branch u can add an image or text post.Also posted user can delete his own post.</h3>
 <h3>  Additionally posts are sorted by time on the home page. </h3>
 
+<h3>Features are signin,login, edit profile,change theme, add new post,delete post,like and dislike post.
+
+Coded using MVVM architecture and used Firebase and Riverpod.</h3>
+
 ![loginscreen](https://github.com/kaancbs/social-app/assets/136937927/565e0773-33fd-453a-9f44-7eb4bc8517bd)
 <br><br>
 ![ss1](https://github.com/kaancbs/social-app/assets/136937927/e81296db-f412-4da2-bc83-c792f23b1e58)
