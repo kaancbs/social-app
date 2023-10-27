@@ -10,5 +10,5 @@ Main Branch Features.
 
 You can just Log In or Sign in and then navigates to Home Screen.
 
-
+Check this project V2.2 branch.
 
